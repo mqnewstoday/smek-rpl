@@ -294,6 +294,9 @@ table {
 
   .content {
     padding: 0.75rem;
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   /* Compact Cards on Mobile */
@@ -328,11 +331,31 @@ table {
     font-size: 0.75rem !important;
   }
 
-  /* Flex Wrap for Action Buttons in Tables */
-  td[style*="display: flex"], td.action-cell {
-    flex-wrap: wrap !important;
-    gap: 0.2rem !important;
-    padding: 0.4rem 0.25rem !important;
+  /* Prevent Action Buttons from Wrapping (Make Them Horizontal) */
+  td[style*="display: flex"] {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 0.3rem !important;
+    min-width: 215px !important;
+    white-space: nowrap !important;
+    padding: 0.4rem 0.5rem !important;
+  }
+  td[style*="display: flex"] .btn {
+    margin: 0 !important;
+  }
+
+  td[style*="text-align: right"]:not([style*="display: flex"]), td.action-cell:not([style*="display: flex"]) {
+    white-space: nowrap !important;
+    min-width: 115px !important;
+    text-align: right !important;
+    padding: 0.4rem 0.5rem !important;
+  }
+  td[style*="text-align: right"]:not([style*="display: flex"]) .btn, td.action-cell:not([style*="display: flex"]) .btn {
+    margin: 0 0.15rem !important;
+    display: inline-block !important;
   }
 
   /* Compact Forms */
