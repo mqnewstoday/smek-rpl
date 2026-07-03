@@ -4,6 +4,16 @@ import * as bcrypt from 'bcrypt';
 const prisma = new PrismaClient();
 
 async function main() {
+  // 0. Clean up existing data to make the seed idempotent
+  console.log('Cleaning up existing database records...');
+  await prisma.activityLog.deleteMany({});
+  await prisma.certificate.deleteMany({});
+  await prisma.attendance.deleteMany({});
+  await prisma.registration.deleteMany({});
+  await prisma.eventCommittee.deleteMany({});
+  await prisma.event.deleteMany({});
+  await prisma.user.deleteMany({});
+
   const passwordHash = await bcrypt.hash('password123', 10);
 
   // 1. Users
