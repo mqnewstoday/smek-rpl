@@ -293,12 +293,101 @@ table {
   }
 
   .content {
-    padding: 1rem;
+    padding: 0.75rem;
+  }
+
+  /* Compact Cards on Mobile */
+  .card {
+    padding: 1rem !important;
+    border-radius: 6px !important;
   }
 
   /* Form & Grid Layout adjustments */
   .grid-cards {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Smaller Headings */
+  h2 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .page-header {
+    flex-direction: row;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Compact Tables for Mobile */
+  th, td {
+    padding: 0.5rem 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Flex Wrap for Action Buttons in Tables */
+  td[style*="display: flex"], td.action-cell {
+    flex-wrap: wrap !important;
+    gap: 0.2rem !important;
+    padding: 0.4rem 0.25rem !important;
+  }
+
+  /* Compact Forms */
+  input, select, textarea {
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .form-group label {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Responsive Modals */
+  .modal-content {
+    padding: 1.25rem !important;
+    margin: 3vh auto !important;
+    width: calc(100% - 1.5rem) !important;
+    max-width: 95% !important;
+    border-radius: 8px !important;
+  }
+  .modal-content h3 {
+    margin-bottom: 0.75rem !important;
+  }
+  .modal-content form {
+    margin-top: 0.5rem !important;
+  }
+
+  /* Specific Committee Modal layout on Mobile */
+  .modal-content div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+/* Extra small screens (Phones) */
+@media (max-width: 576px) {
+  .topbar {
+    padding: 0.5rem 0.75rem;
+  }
+  .content {
+    padding: 0.5rem;
+  }
+  .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  .btn-sm {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.65rem !important;
+  }
+  
+  /* Hide non-critical table headers/cells on very small screens */
+  th.hide-mobile, td.hide-mobile {
+    display: none !important;
   }
 }
 
